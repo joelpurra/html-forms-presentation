@@ -8,6 +8,7 @@
     "bespoke-hash": "~0.1.0",
     "bespoke-progress": "~0.1.0",
     "bespoke-state": "~0.2.0",
+    "bespoke-logbook": "~0.1.0",
     "prism": "gh-pages"
   }
 }
