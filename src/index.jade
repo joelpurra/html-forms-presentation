@@ -20,6 +20,148 @@ html
         a(href="http://joelpurra.com/") joelpurra.com
         a(href="http://joelpurra.com/r/html-forms/") joelpurra.com/r/html-forms/
 
+      section
+        h2.bullet Improve what?
+        .bullet
+          h3 Usability
+          .columns.two
+            .column.left
+              ul.no-bullets
+                li Reduce confusion
+                li Reduce complexity
+                li Reduce perceived length
+                li Reduce frustration
+                li Normalized browser behavior
+            .column.right.bullet
+              ul.no-bullets
+                li &harr; Logical input ordering
+                li &harr; Hide fields until needed
+                li &harr; Split up form to steps/parts
+                li &harr; Early feedback, error messages
+                li &harr; Override dependent behavior
+        hr
+        .bullet
+          h3 Input speed
+          .columns.two
+            .column.left
+              ul.no-bullets
+                li Autocompletion
+                li Automatic formatting
+                li Skipping low-frequency fields
+            .column.right.bullet
+              ul.no-bullets
+                li &harr; Based on already existing data
+                li &harr; Based on rules
+                li &harr; Based on user consent/usage
+
+      section(data-bespoke-hash='h5validate', data-bespoke-state='emphatic')
+        h2: a(href="https://github.com/joelpurra/h5Validate") h5Validate
+        h3 An HTML5 form validation plugin for jQuery.
+        p Usability (normalize browser behavior, early feedback, error messages)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+        p Not super active, but my fork is one year old, and only partially re-integrated.
+
+      section(data-bespoke-hash='plusastab', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
+        h3 A jQuery plugin to use the numpad plus key (configurable) as a tab key equivalent.
+        p Speed (physical keyboard distance)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      section(data-bespoke-hash='skipontab', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
+        h3 A jQuery plugin to exempt selected form fields from the forward tab order.
+        p Speed (reduce field tabbing)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+        p Not the same as 
+          code tabindex="-1"
+          , see 
+          a(href="https://github.com/joelpurra/skipontab/wiki/SkipOnTab-versus-tabindex") SkipOnTab versus tabindex
+          .
+
+      section(data-bespoke-hash='emulatetab', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/emulatetab") EmulateTab
+        h3 A jQuery plugin to emulate tabbing between elements on a page.
+        p Usability (normalize browser behavior)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      section(data-bespoke-hash='followup', data-bespoke-state='emphatic')
+        h2: a(href="https://gist.github.com/joelpurra/3024198") Followup
+        h3 A jQuery plugin to show and hide follow up questions in a form.
+        p Usability (reduce complexity/fewer visible fields), speed (reduce field tabbing)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      section(data-bespoke-hash='autocleancallback', data-bespoke-state='emphatic')
+        h2: a(href="https://gist.github.com/joelpurra/2254354") AutoCleanCallback
+        h3 Automatic HTML input field cleaning onkeyup/onchange using jQuery.
+        p Usability (takes care of formatting), speed (reduced efforts)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      section(data-bespoke-hash='editdidwhat', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
+        h3 Compare two strings to see what has changed, and perform some string manipulation.
+        p Usability (reduced complexity, fewer fields/freetext), speed (autocompletion)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      section(data-bespoke-hash='pagehasformchanges', data-bespoke-state='emphatic')
+        h2: a(href="https://gist.github.com/joelpurra/2579139") PageHasFormChanges
+        h3 A jQuery plugin to check if anything has changed in any form on a page, and warn the user before leaving the page.
+        p Usability (reduces frustration)
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      section(data-bespoke-hash='changepolling', data-bespoke-state='emphatic')
+        h2: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
+        h3 A jQuery plugin to check if the value has changed in an input/select/textarea without relying on the jQuery .change() event. This is perfomed using polling at a configurable interval, which will then trigger the .change() event.
+        p Developer tool
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+        p See also
+          a(href="http://joelpurra.github.com/jquery-mutation-summary") jquery-mutation-summary
+          .
+
+      section(data-bespoke-hash='formfieldinfo', data-bespoke-state='emphatic')
+        h2: a(href="https://gist.github.com/joelpurra/3161982") FormFieldInfo
+        h3 A javacript plugin used to collect information about forms in a page. This information is then used to filter out potential form problems, like missing values for radio buttons etcetera.
+        p Developer tool
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
+      //- section(data-bespoke-hash='', data-bespoke-state='emphatic')
+        h2: a(href="") 
+        h3 
+        p Usability (), speed ()
+        hr
+        code.block.language-javascript
+          pre.
+            // script code here
+
       section(data-bespoke-hash='questions')
         h2 Improving user experience in HTML forms
         h3 Questions?
@@ -28,18 +170,12 @@ html
           li: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
           li: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
           li: a(href="http://joelpurra.github.com/emulatetab") EmulateTab
-          li: a(href="https://gist.github.com/joelpurra/2579139") PageHasFormChanges
-          li: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
           li: a(href="https://gist.github.com/joelpurra/3024198") Followup
-          li: a(href="https://gist.github.com/joelpurra/3161982") FormFieldInfo
           li: a(href="https://gist.github.com/joelpurra/2254354") AutoCleanCallback
           li: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
-        hr
-        ul.no-bullets.two-columns
-          li: a(href="https://gist.github.com/joelpurra/2360001") parseDynamicContent
-          li: a(href="http://joelpurra.github.com/jquery-mutation-summary") jquery-mutation-summary
-          li: a(href="http://joelpurra.github.com/collectcalls") CollectCalls
-          li: a(href="https://gist.github.com/joelpurra/2984763") ObjectComparator
+          li: a(href="https://gist.github.com/joelpurra/2579139") PageHasFormChanges
+          li: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
+          li: a(href="https://gist.github.com/joelpurra/3161982") FormFieldInfo
 
       section(data-bespoke-hash='joelpurra')
         h2 Joel Purra
@@ -49,7 +185,6 @@ html
         hr
         p You'll find the presentation at 
           a(href="http://joelpurra.com/r/html-forms/") joelpurra.com/r/html-forms
-          .
         p Presented at the 
           a(href="http://www.meetup.com/Berlin-HTML5-User-Group/") Berlin HTML5 Meetup Group
           |  in December 2013.
@@ -71,7 +206,7 @@ html
         h2 Code
         h3 Powered by <a href=""></a>
         hr
-        code.language-javascript
+        code.block.language-javascript
           pre.
             // script code here
 

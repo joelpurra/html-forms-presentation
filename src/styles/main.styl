@@ -38,7 +38,6 @@ body
   height: 100%
 
 body
-  margin: 12px 0 0 12px
   background: linear-gradient(top, #ccc, #666);
 
 article
@@ -163,7 +162,7 @@ article
 
 // prism styles
 
-code
+code.block
   display: block // fixes flexbox rendering issues in Safari
   padding: 26px !important
   border: 3px solid #00000066 !important
@@ -236,3 +235,12 @@ footer
 
 .two-columns
   column-count: 2;
+
+.columns.two .column
+  width: 50%
+
+.columns.two .column.left
+  float: left
+
+.columns.two .column.right
+  float: right
