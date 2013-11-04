@@ -4,7 +4,7 @@
 
 slide_width = 640px
 slide_height = 480px
-slide_background = #eaeaea
+slide_background = #eaeaea88
 
 slide_transition_length = .6s
 slide_transition_easing = ease
@@ -33,6 +33,14 @@ bullet_transition_translate_x = 16px
 
 // bespoke.js layout styles
 
+html,
+body
+  height: 100%
+
+body
+  margin: 12px 0 0 12px
+  background: linear-gradient(top, #ccc, #666);
+
 article
   transition: background slide_transition_length slide_transition_easing
   display: none
@@ -58,9 +66,6 @@ article
   backface-visibility: hidden
   display: flex
   flex-direction: column
-  justify-content: center
-  align-items: center
-  text-align: center
   width: slide_width
   height: slide_height
   position: absolute
@@ -78,6 +83,12 @@ article
     page-break-before: always
     position: static
     margin: 0
+
+.centered .bespoke-slide,
+.bespoke-slide.centered
+  justify-content: center
+  align-items: center
+  text-align: center
 
 .bespoke-before
   transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
@@ -147,13 +158,15 @@ article
 
 .emphatic,
 .emphatic .bespoke-slide
-  background: slide_background
+  //background: slide_background
+  background: linear-gradient(top, #ffffff00, #ff777766, black);
 
 // prism styles
 
 code
   display: block // fixes flexbox rendering issues in Safari
   padding: 26px !important
+  border: 3px solid #00000066 !important
 
 // content styles
 
@@ -190,9 +203,36 @@ li
   margin-bottom: 12px
 
 p
-  margin: 0 100px 12px
+  // margin: 0 100px 12px
+  margin-top: 12px
   line-height: 22px
 
 a
   color: #0089f3
   text-decoration: none
+
+
+// Custom additions
+
+header,
+footer
+  margin: 0.5em
+  padding: 0.3em
+
+header
+  fixed: top left
+
+footer
+  display: block
+  fixed: bottom right
+  opacity: .3
+  border-radius: 3px
+  background: #ffffff66
+  a
+    display: block
+    color: black
+  &:hover
+    opacity: 1
+
+.two-columns
+  column-count: 2;
