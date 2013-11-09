@@ -5,6 +5,8 @@
         hash: true,
         progress: true,
         state: true,
-        logbook: true
+        convenient: true,
+        logbook: true,
+        jumpy: true
     });
 }());
