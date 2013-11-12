@@ -11,6 +11,8 @@
     "bespoke-convenient": "~0.2.1",
     "bespoke-logbook": "~1.0.0",
     "bespoke-jumpy": "~0.1.1",
+    "bespoke-indexfinger": "~0.1.1",
+    "bespoke-secondary": "~0.1.0",
     "prism": "gh-pages"
   }
 }
