@@ -13,6 +13,7 @@
     "bespoke-jumpy": "~0.1.1",
     "bespoke-indexfinger": "~0.1.1",
     "bespoke-secondary": "~0.1.0",
+    "prefix-free": "gh-pages",
     "prism": "gh-pages"
   }
 }

@@ -19,7 +19,6 @@ html
         h1 Improving user experience in HTML forms
         a(href="http://joelpurra.com/") joelpurra.com
         a(href="http://joelpurra.com/r/html-forms/") joelpurra.com/r/html-forms/
-        aside Mention stuff
 
       section
         h2.bullet Improve what?
@@ -62,8 +61,24 @@ html
         hr
         code.block.language-javascript
           pre.
-            // script code here
+            $("form").h5Validate();
         p Not super active, but my fork is one year old, and only partially re-integrated.
+
+      section(data-bespoke-hash='plusastab-1', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
+        p(style="text-align: center;")
+          img(src="resources/images/4895095_f520.jpg", style="max-width: 75%; max-height: 75%;")
+
+      section(data-bespoke-hash='plusastab-2', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
+        p(style="text-align: center;")
+          img(src="resources/images/kedudukan-normal-meja.jpg", style="max-width: 75%; max-height: 75%; transform: scale(-1, -1);")
+
+      section(data-bespoke-hash='plusastab-3', data-bespoke-state='emphatic')
+        h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
+        div.bullet(style="height: 350px; background-image: url(resources/images/61O35Ec0UnL._SL1500_.jpg); background-position: center center; background-size: cover;")
+          .bullet(style="top: 227px; left: 20px; position: absolute; width: 75px; height: 50px; border-radius: 75px; border: 5px solid red;")
+          .bullet(style="top: 227px; left: 567px; position: absolute; width: 50px; height: 75px; border-radius: 75px; border: 5px solid red;")
 
       section(data-bespoke-hash='plusastab', data-bespoke-state='emphatic')
         h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
@@ -72,16 +87,29 @@ html
         hr
         code.block.language-javascript
           pre.
-            // script code here
+            JoelPurra.PlusAsTab.setOptions({
+              // Enter, arrow down, numpad plus
+              key: [13, 40, 107]
+            });
+
+            $(selector).plusAsTab();
+        code.block.language-markup
+          pre.
+            <input type="number" data-plus-as-tab="true" />
 
       section(data-bespoke-hash='skipontab', data-bespoke-state='emphatic')
         h2: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
         h3 A jQuery plugin to exempt selected form fields from the forward tab order.
         p Speed (reduce field tabbing)
         hr
-        code.block.language-javascript
+        code.block.language-markup
           pre.
-            // script code here
+            <input type="text" data-skip-on-tab="true" />
+
+            <ol data-skip-on-tab="true">
+              <li><input type="checkbox" /> Checkbox</li>
+              <li><input type="checkbox" /> Another checkbox</li>
+              ...
         p Not the same as 
           code tabindex="-1"
           , see 
@@ -95,34 +123,66 @@ html
         hr
         code.block.language-javascript
           pre.
-            // script code here
+            // From the currently focused element 
+            $.emulateTab();
+
+            // Reverse tab from a specific element
+            $(selector).emulateTab(-1);
+        p For example, go to the next field after selecting a value in a dropdown.
+        p This is a developer library/tool.
 
       section(data-bespoke-hash='followup', data-bespoke-state='emphatic')
         h2: a(href="https://gist.github.com/joelpurra/3024198") Followup
         h3 A jQuery plugin to show and hide follow up questions in a form.
         p Usability (reduce complexity/fewer visible fields), speed (reduce field tabbing)
         hr
-        code.block.language-javascript
+        code.block.language-markup.smaller
           pre.
-            // script code here
+            <p data-has-follow-ups="">
+              Ever had a close encounter with a UFO?
+              <div>
+                <input type="radio" data-has-follow-up="sibling" /> Yes
+                <div data-is-follow-up="">
+                  Please explain the encounter, especially what kind it was
+                  <textarea data-is-follow-up-required="required"></textarea>
+                </div>
+              </div>
+              <input type="radio" /> No
+            </p>
 
       section(data-bespoke-hash='autocleancallback', data-bespoke-state='emphatic')
         h2: a(href="https://gist.github.com/joelpurra/2254354") AutoCleanCallback
         h3 Automatic HTML input field cleaning onkeyup/onchange using jQuery.
         p Usability (takes care of formatting), speed (reduced efforts)
         hr
-        code.block.language-javascript
+        code.block.language-javascript.smaller
           pre.
-            // script code here
+            var $telephoneInputs = $("[type=tel]");
+
+            $telephoneInputs.each(function() {
+                // /^\(?([0-9]{3})\)?[\-. ]?([0-9]{3})[\-. ]?([0-9]{4})$/
+                // "($1) $2-$3"
+                JoelPurra.autoCleanNorthAmericanPhoneNumber($(this));
+            });
+        p Works well with copy-pastes, regexp beauty fixes.
+        p Easily extensible. Comes with trim, lowercase, uppercase, normalize whitespace, numbers only.
 
       section(data-bespoke-hash='editdidwhat', data-bespoke-state='emphatic')
         h2: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
         h3 Compare two strings to see what has changed, and perform some string manipulation.
         p Usability (reduced complexity, fewer fields/freetext), speed (autocompletion)
         hr
-        code.block.language-javascript
+        code.block.language-javascript.smaller
           pre.
-            // script code here
+            var change = EditDidWhat.detectChange(previous, current),
+             diffIndex = EditDidWhat.findDifferenceIndex(previous, current),
+             diffLastIndex = EditDidWhat.findLastDifferenceIndex(previous, current),
+             diffLineNumber = EditDidWhat.getLineNumberAt(current, diffIndex),
+             diffLinePrevious = EditDidWhat.getLine(previous, diffLineNumber),
+             diffLineCurrent = EditDidWhat.getLine(current, diffLineNumber),
+             diffLineReplaced = EditDidWhat.replaceLine(current, diffLineNumber, replaceWith);
+        p Detects inserts, truncations, replacements, appends, splices.
+        p Works best on small changes, for example per keystroke.
 
       section(data-bespoke-hash='pagehasformchanges', data-bespoke-state='emphatic')
         h2: a(href="https://gist.github.com/joelpurra/2579139") PageHasFormChanges
@@ -131,28 +191,34 @@ html
         hr
         code.block.language-javascript
           pre.
-            // script code here
+            // Just load the script!
+        p Made for pages with only one form, where "any" change means the user should post ("save") the form.
 
       section(data-bespoke-hash='changepolling', data-bespoke-state='emphatic')
         h2: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
-        h3 A jQuery plugin to check if the value has changed in an input/select/textarea without relying on the jQuery .change() event. This is perfomed using polling at a configurable interval, which will then trigger the .change() event.
-        p Developer tool
+        h3 A jQuery plugin to check if the value has changed in an input/select/textarea without relying on the jQuery .change() event.
         hr
         code.block.language-javascript
           pre.
-            // script code here
-        p See also
+            $("#my-input-to-poll").changePolling({
+              interval: 1000,
+              autoStart: true
+            });
+        p Polling at a configurable interval, which will then trigger the jQuery .change() event. Useful when you've got third-party plugins that don't play well with others, when performing changes in forms.
+        p This is a developer library/tool. See also 
           a(href="http://joelpurra.github.com/jquery-mutation-summary") jquery-mutation-summary
           .
 
       section(data-bespoke-hash='formfieldinfo', data-bespoke-state='emphatic')
-        h2: a(href="https://gist.github.com/joelpurra/3161982") FormFieldInfo
-        h3 A javacript plugin used to collect information about forms in a page. This information is then used to filter out potential form problems, like missing values for radio buttons etcetera.
-        p Developer tool
+        h2: a(href="https://github.com/joelpurra/formfieldinfo") FormFieldInfo
+        h3 A javascript plugin used to collect information about forms in a page.
         hr
         code.block.language-javascript
           pre.
-            // script code here
+            JoelPurra.FormFieldInfo.getFields(selector, $context)
+        p This is a developer library/tool.
+        p Useful when running automated tools to test or extract information - for example using phantomjs.
+        p The form field information is used to filter out potential form problems, like missing values for radio buttons etcetera.
 
       //- section(data-bespoke-hash='', data-bespoke-state='emphatic')
         h2: a(href="") 
@@ -176,7 +242,7 @@ html
           li: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
           li: a(href="https://gist.github.com/joelpurra/2579139") PageHasFormChanges
           li: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
-          li: a(href="https://gist.github.com/joelpurra/3161982") FormFieldInfo
+          li: a(href="https://github.com/joelpurra/formfieldinfo") FormFieldInfo
 
       section(data-bespoke-hash='joelpurra')
         h2 Joel Purra
@@ -190,6 +256,10 @@ html
           a(href="http://www.meetup.com/Berlin-HTML5-User-Group/") Berlin HTML5 Meetup Group
           |  in December 2013.
         hr
+        p Images: 
+          a(href="http://lcbenefield.hubpages.com/hub/Making-Your-Home-Office-Ergonomically-Correct") 1 
+          a(href="http://penyakitkomputer.com/amalanterbaikict/elak-sakit-msd-dengan-meja-ergonomi/") 2 
+          a(href="http://www.amazon.com/IBM-USB-Keyboard-In-Beige/dp/B001150KDK") 3 
         p Code snippets/examples may be copied freely.
         p The rest of the presentation is licenced under 
           a(href="https://creativecommons.org/licenses/by-sa/3.0/") CC BY-SA 3.0
@@ -202,14 +272,6 @@ html
           li Bullet 1
           li Bullet 2
           li Bullet 3
-
-      //- section(data-bespoke-hash='', data-bespoke-state='emphatic')
-        h2 Code
-        h3 Powered by <a href=""></a>
-        hr
-        code.block.language-javascript
-          pre.
-            // script code here
 
     footer
       a(href="http://joelpurra.com") joelpurra.com
@@ -225,5 +287,6 @@ html
     script(src='bower_components/bespoke-jumpy/dist/bespoke-jumpy.min.js')
     script(src='bower_components/bespoke-indexfinger/dist/bespoke-indexfinger.min.js')
     script(src='bower_components/bespoke-secondary/dist/bespoke-secondary.min.js')
+    script(src='bower_components/prefix-free/prefixfree.min.js')
     script(src='bower_components/prism/prism.js')
     script(src='scripts/main.js')
