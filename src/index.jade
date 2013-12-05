@@ -15,12 +15,25 @@ html
 
     article
 
-      section
+      section(data-bespoke-hash="title")
         h1 Improving user experience in HTML forms
         a(href="http://joelpurra.com/") joelpurra.com
         a(href="http://joelpurra.com/r/html-forms/") joelpurra.com/r/html-forms/
+        aside
+          p Allow those who are late to find a seat.
+          p This talk is about forms in HTML, and how they can be improved in different ways, using HTML5 attributes and javascript.
+          p Many of the tips are for advanced, repeat users, usually administrative or data entry staff within a company.
+          p The same techniques may not be applicable on the public web.
+          p This is not about 
+            a(href="https://developer.mozilla.org/en-US/docs/Accessibility/ARIA") Accessible Rich Internet Applications (ARIA)
+            , but some tips could go well together. I'm not an ARIA expert.
 
-      section
+      section(data-bespoke-hash="teaser")
+        h2 Insert pretty picture to make everyone super interested
+        p(style="text-align: center;")
+          img(src="resources/images/happycat.jpg", style="max-width: 75%; max-height: 75%;")
+
+      section(data-bespoke-hash="improve-what")
         h2.bullet Improve what?
         .bullet
           h3 Usability
@@ -48,11 +61,13 @@ html
                 li Autocompletion
                 li Automatic formatting
                 li Skipping low-frequency fields
+                li Shortcut keys
             .column.right.bullet
               ul.no-bullets
                 li &harr; Based on already existing data
                 li &harr; Based on rules
                 li &harr; Based on user consent/usage
+                li &harr; Based on usage
 
       section(data-bespoke-hash="h5validate", data-bespoke-state="emphatic")
         h2: a(href="https://github.com/joelpurra/h5Validate") h5Validate
@@ -64,7 +79,52 @@ html
             $("form").h5Validate();
         p Not super active, but my fork is one year old, and only partially re-integrated.
         aside
-          p The original author uses the code in production, and didn't approve of my addition. I have them merged in my fork, but I think it might be best to use a different, or several separate libraries.
+          p The original author uses the code in production, and didn't approve of my additions. I have them merged in my fork, but I think it might be best to use a different, or several separate libraries.
+          p This was a good match for what I was looking for last year, but after having worked with it, I think there are more configurable and dynamic alternatives.
+
+      section(data-bespoke-hash="emulatetab", data-bespoke-state="emphatic")
+        h2: a(href="http://joelpurra.github.com/emulatetab") EmulateTab
+        h3 A jQuery plugin to emulate tabbing between elements on a page.
+        p Usability (normalize browser behavior)
+        hr
+        code.block.language-javascript
+          pre.
+            // From the currently focused element 
+            $.emulateTab();
+
+            // Reverse tab from a specific element
+            $(selector).emulateTab(-1);
+        p For example, go to the next field after selecting a value in a dropdown.
+        p This is a developer library/tool.
+        aside
+          p Emulating tabbing can be done in a few lines of jQuery, but I went all out.
+          p Based on the need in two plugins - SkipOnTab and PlusAsTab.
+
+      section(data-bespoke-hash="skipontab", data-bespoke-state="emphatic")
+        h2: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
+        h3 A jQuery plugin to exempt selected form fields from the forward tab order.
+        p Speed (reduce field tabbing)
+        hr
+        code.block.language-markup
+          pre.
+            <input type="text" data-skip-on-tab="true" />
+
+            <ol data-skip-on-tab="true">
+              <li><input type="checkbox" /> Checkbox</li>
+              <li><input type="checkbox" /> Another checkbox</li>
+              ...
+        p Not the same as 
+          code tabindex="-1"
+          , see 
+          a(href="https://github.com/joelpurra/skipontab/wiki/SkipOnTab-versus-tabindex") SkipOnTab versus tabindex
+          .
+        aside
+          p Skipping a field in HTML is pretty easy - you just add 
+            code tabindex="-1"
+            , which was unspecified behavior until HTML5.
+          p There are a couple of drawbacks though - one of them being that you can't reach that element
+            em at all
+            .
 
       section(data-bespoke-hash="plusastab-1", data-bespoke-state="emphatic")
         h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
@@ -113,40 +173,6 @@ html
         aside
           p Even though data inputters usually are, not everyone is using a full size keyboard these days. You might want to add a few options, depending on your target group.
 
-      section(data-bespoke-hash="skipontab", data-bespoke-state="emphatic")
-        h2: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
-        h3 A jQuery plugin to exempt selected form fields from the forward tab order.
-        p Speed (reduce field tabbing)
-        hr
-        code.block.language-markup
-          pre.
-            <input type="text" data-skip-on-tab="true" />
-
-            <ol data-skip-on-tab="true">
-              <li><input type="checkbox" /> Checkbox</li>
-              <li><input type="checkbox" /> Another checkbox</li>
-              ...
-        p Not the same as 
-          code tabindex="-1"
-          , see 
-          a(href="https://github.com/joelpurra/skipontab/wiki/SkipOnTab-versus-tabindex") SkipOnTab versus tabindex
-          .
-
-      section(data-bespoke-hash="emulatetab", data-bespoke-state="emphatic")
-        h2: a(href="http://joelpurra.github.com/emulatetab") EmulateTab
-        h3 A jQuery plugin to emulate tabbing between elements on a page.
-        p Usability (normalize browser behavior)
-        hr
-        code.block.language-javascript
-          pre.
-            // From the currently focused element 
-            $.emulateTab();
-
-            // Reverse tab from a specific element
-            $(selector).emulateTab(-1);
-        p For example, go to the next field after selecting a value in a dropdown.
-        p This is a developer library/tool.
-
       section(data-bespoke-hash="followup", data-bespoke-state="emphatic")
         h2: a(href="https://gist.github.com/joelpurra/3024198") Followup
         h3 A jQuery plugin to show and hide follow up questions in a form.
@@ -182,6 +208,11 @@ html
             });
         p Works well with copy-pastes, regexp beauty fixes.
         p Easily extensible. Comes with trim, lowercase, uppercase, normalize whitespace, numbers only.
+        aside
+          p Can be used with or without 
+            code pattern="/^\(?([0-9]{3})\)?[\-. ]?([0-9]{3})[\-. ]?([0-9]{4})$/"
+            |  depending on how strict you want to be.
+          p Make sure not to irritate the user by enforcing a format they don't accept. It's best if it follows a known company formatting policy.
 
       section(data-bespoke-hash="editdidwhat", data-bespoke-state="emphatic")
         h2: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
@@ -199,6 +230,15 @@ html
              diffLineReplaced = EditDidWhat.replaceLine(current, diffLineNumber, replaceWith);
         p Detects inserts, truncations, replacements, appends, splices.
         p Works best on small changes, for example per keystroke.
+        aside
+          p Built to autocomplete data in 
+            code &lt;textarea&gt;
+            |  fields, which can be tricky.
+          p Sucessfully implemented textarea address autocompletion, in two different ways.
+          ol
+            li Full address autocompletion - type a few letters, and a complete address would be autocompleted. The address was based on already existing address data in the database, ordered by number of uses, limited by time.
+            li If the address hadn't already matched, postal code locality autocomplete.
+            li Street address autocomplete, and verification, was planned, but it required the postal code to be entered first, to be accurate.
 
       section(data-bespoke-hash="pagehasformchanges", data-bespoke-state="emphatic")
         h2: a(href="https://github.com/joelpurra/pagehasformchanges") PageHasFormChanges
@@ -212,7 +252,9 @@ html
 
       section(data-bespoke-hash="changepolling", data-bespoke-state="emphatic")
         h2: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
-        h3 A jQuery plugin to check if the value has changed in an input/select/textarea without relying on the jQuery .change() event.
+        h3 A jQuery plugin to check if the value has changed in an input/select/textarea without relying on the jQuery 
+          code .change()
+          |  event.
         hr
         code.block.language-javascript
           pre.
@@ -220,10 +262,14 @@ html
               interval: 1000,
               autoStart: true
             });
-        p Polling at a configurable interval, which will then trigger the jQuery .change() event. Useful when you've got third-party plugins that don't play well with others, when performing changes in forms.
+        p Polling at a configurable interval, which will then trigger the jQuery 
+          code .change()
+          |  event. Useful when you've got third-party plugins that don't play well with others, when performing changes in forms.
         p This is a developer library/tool. See also 
           a(href="http://joelpurra.github.com/jquery-mutation-summary") jquery-mutation-summary
           .
+        aside
+          p When programmatically performing changes to form values, the change event isn't triggered. As it isn't triggered automatically, many plugins are failing to notify others of their changes.
 
       section(data-bespoke-hash="formfieldinfo", data-bespoke-state="emphatic")
         h2: a(href="https://github.com/joelpurra/formfieldinfo") FormFieldInfo
@@ -277,9 +323,10 @@ html
           |  in December 2013.
         hr
         p Images: 
-          a(href="http://lcbenefield.hubpages.com/hub/Making-Your-Home-Office-Ergonomically-Correct") 1 
-          a(href="http://penyakitkomputer.com/amalanterbaikict/elak-sakit-msd-dengan-meja-ergonomi/") 2 
-          a(href="http://www.amazon.com/IBM-USB-Keyboard-In-Beige/dp/B001150KDK") 3 
+          a(href="http://knowyourmeme.com/photos/71862-happy-cat") 1 
+          a(href="http://lcbenefield.hubpages.com/hub/Making-Your-Home-Office-Ergonomically-Correct") 2 
+          a(href="http://penyakitkomputer.com/amalanterbaikict/elak-sakit-msd-dengan-meja-ergonomi/") 3 
+          a(href="http://www.amazon.com/IBM-USB-Keyboard-In-Beige/dp/B001150KDK") 4 
         p Code snippets/examples may be copied freely.
         p The rest of the presentation is licenced under 
           a(href="https://creativecommons.org/licenses/by-sa/3.0/") CC BY-SA 3.0
