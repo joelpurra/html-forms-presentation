@@ -69,7 +69,7 @@ html
                 li &harr; Based on user consent/usage
                 li &harr; Based on usage
 
-      section(data-bespoke-hash="h5validate", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="h5validate")
         h2: a(href="https://github.com/joelpurra/h5Validate") h5Validate
         h3 An HTML5 form validation plugin for jQuery.
         p Usability (normalize browser behavior, early feedback, error messages)
@@ -82,7 +82,7 @@ html
           p The original author uses the code in production, and didn't approve of my additions. I have them merged in my fork, but I think it might be best to use a different, or several separate libraries.
           p This was a good match for what I was looking for last year, but after having worked with it, I think there are more configurable and dynamic alternatives.
 
-      section(data-bespoke-hash="emulatetab", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="emulatetab")
         h2: a(href="http://joelpurra.github.com/emulatetab") EmulateTab
         h3 A jQuery plugin to emulate tabbing between elements on a page.
         p Usability (normalize browser behavior)
@@ -100,7 +100,7 @@ html
           p Emulating tabbing can be done in a few lines of jQuery, but I went all out.
           p Based on the need in two plugins - SkipOnTab and PlusAsTab.
 
-      section(data-bespoke-hash="skipontab", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="skipontab")
         h2: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
         h3 A jQuery plugin to exempt selected form fields from the forward tab order.
         p Speed (reduce field tabbing)
@@ -126,7 +126,7 @@ html
             em at all
             .
 
-      section(data-bespoke-hash="plusastab-1", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="plusastab-1")
         h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
         p(style="text-align: center;")
           img(src="resources/images/4895095_f520.jpg", style="max-width: 75%; max-height: 75%;")
@@ -134,7 +134,7 @@ html
           p It seems most information about computing workstation ergonomics has a picture like this. Have you seen it?
           p Adjust your chair, sit up straight, relax your shoulders and so on.
 
-      section(data-bespoke-hash="plusastab-2", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="plusastab-2")
         h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
         p(style="text-align: center;")
           img(src="resources/images/kedudukan-normal-meja.jpg", style="max-width: 75%; max-height: 75%; transform: scale(-1, -1);")
@@ -144,7 +144,7 @@ html
           p Data input, such as faxed/mailed orders, signed documents, receipts, taxes, almost anything in the government, mixes using paper copies, mouse and keyboard.
           p While not super important for software developers, those who do this all day every work day, can save seconds, minutes, hours, days, weeks - and their wrists, elbows, what have you, by reducing the necessary steps.
 
-      section(data-bespoke-hash="plusastab-3", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="plusastab-3")
         h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
         div.bullet(style="height: 350px; background-image: url(resources/images/61O35Ec0UnL._SL1500_.jpg); background-position: center center; background-size: cover;")
           .bullet(style="top: 227px; left: 20px; position: absolute; width: 75px; height: 50px; border-radius: 75px; border: 5px solid red;")
@@ -154,7 +154,7 @@ html
           p I've used this myself at a job where we, some days, had to do number intensive data input. I was a technical administrator at Stockholm International Fairs, was the title, but apart from knowing all the rules regarding customer orders, we had to input all the six/seven digit codes for things like 5 by 5 meter booth or electricity 10A.
           p Having a "second tab key" on the right hand side can save quite a lot of effort, especially when working with numbers on the numpad. It basically frees up your left hand.
 
-      section(data-bespoke-hash="plusastab", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="plusastab")
         h2: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
         h3 A jQuery plugin to use the numpad plus key (configurable) as a tab key equivalent.
         p Speed (physical keyboard distance)
@@ -173,8 +173,8 @@ html
         aside
           p Even though data inputters usually are, not everyone is using a full size keyboard these days. You might want to add a few options, depending on your target group.
 
-      section(data-bespoke-hash="followup", data-bespoke-state="emphatic")
-        h2: a(href="https://gist.github.com/joelpurra/3024198") Followup
+      section(data-bespoke-hash="followup")
+        h2: a(href="https://github.com/joelpurra/followup") Followup
         h3 A jQuery plugin to show and hide follow up questions in a form.
         p Usability (reduce complexity/fewer visible fields), speed (reduce field tabbing)
         hr
@@ -192,8 +192,8 @@ html
               <input type="radio" /> No
             </p>
 
-      section(data-bespoke-hash="autocleancallback", data-bespoke-state="emphatic")
-        h2: a(href="https://gist.github.com/joelpurra/2254354") AutoCleanCallback
+      section(data-bespoke-hash="autocleancallback")
+        h2: a(href="https://github.com/joelpurra/autocleancallback") AutoCleanCallback
         h3 Automatic HTML input field cleaning onkeyup/onchange using jQuery.
         p Usability (takes care of formatting), speed (reduced efforts)
         hr
@@ -207,14 +207,26 @@ html
                 JoelPurra.autoCleanNorthAmericanPhoneNumber($(this));
             });
         p Works well with copy-pastes, regexp beauty fixes.
-        p Easily extensible. Comes with trim, lowercase, uppercase, normalize whitespace, numbers only.
+        p Easily extensible. Comes with trim, lowercase, uppercase, normalize whitespace, numbers only. Extensions include 
+          a(href="https://github.com/joelpurra/autocleancallback-canada") AutoCleanCallback-Canada
+          , as I was living and working in Canada while developing this.
         aside
           p Can be used with or without 
             code pattern="/^\(?([0-9]{3})\)?[\-. ]?([0-9]{3})[\-. ]?([0-9]{4})$/"
             |  depending on how strict you want to be.
           p Make sure not to irritate the user by enforcing a format they don't accept. It's best if it follows a known company formatting policy.
 
-      section(data-bespoke-hash="editdidwhat", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="pagehasformchanges")
+        h2: a(href="https://github.com/joelpurra/pagehasformchanges") PageHasFormChanges
+        h3 A jQuery plugin to check if anything has changed in any form on a page, and warn the user before leaving the page.
+        p Usability (reduces frustration)
+        hr
+        code.block.language-javascript
+          pre.
+            // Just load the script!
+        p Made for pages with only one form, where "any" change means the user should post ("save") the form.
+
+      section(data-bespoke-hash="editdidwhat")
         h2: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
         h3 Compare two strings to see what has changed, and perform some string manipulation.
         p Usability (reduced complexity, fewer fields/freetext), speed (autocompletion)
@@ -240,17 +252,7 @@ html
             li If the address hadn't already matched, postal code locality autocomplete.
             li Street address autocomplete, and verification, was planned, but it required the postal code to be entered first, to be accurate.
 
-      section(data-bespoke-hash="pagehasformchanges", data-bespoke-state="emphatic")
-        h2: a(href="https://github.com/joelpurra/pagehasformchanges") PageHasFormChanges
-        h3 A jQuery plugin to check if anything has changed in any form on a page, and warn the user before leaving the page.
-        p Usability (reduces frustration)
-        hr
-        code.block.language-javascript
-          pre.
-            // Just load the script!
-        p Made for pages with only one form, where "any" change means the user should post ("save") the form.
-
-      section(data-bespoke-hash="changepolling", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="changepolling")
         h2: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
         h3 A jQuery plugin to check if the value has changed in an input/select/textarea without relying on the jQuery 
           code .change()
@@ -271,7 +273,7 @@ html
         aside
           p When programmatically performing changes to form values, the change event isn't triggered. As it isn't triggered automatically, many plugins are failing to notify others of their changes.
 
-      section(data-bespoke-hash="formfieldinfo", data-bespoke-state="emphatic")
+      section(data-bespoke-hash="formfieldinfo")
         h2: a(href="https://github.com/joelpurra/formfieldinfo") FormFieldInfo
         h3 A javascript plugin used to collect information about forms in a page.
         hr
@@ -283,8 +285,10 @@ html
         p This is a developer library/tool.
         p Useful when running automated tools to test or extract information - 
           a(href="https://github.com/joelpurra/extract-fields") for example using phantomjs
+          , favorably used with 
+          a(href="https://gist.github.com/joelpurra/2984763") ObjectComparator
           .
-        p The form field information is used to filter out potential form problems, like missing values for radio buttons etcetera.
+        p The form field information is used to filter out potential form problems, like missing field names, values for radio buttons etcetera.
 
       //- section(data-bespoke-hash="", data-bespoke-state="emphatic")
         h2: a(href="") 
@@ -295,20 +299,32 @@ html
           pre.
             // script code here
 
+      //- section(data-bespoke-hash="")
+        h2 Header
+        h3.bullet Powered by <a href=""></a>
+        ul
+          li Bullet 1
+          li Bullet 2
+          li Bullet 3
+
       section(data-bespoke-hash="questions")
         h2 Improving user experience in HTML forms
         h3 Questions?
         ul.no-bullets.two-columns
           li: a(href="https://github.com/joelpurra/h5Validate") h5Validate
-          li: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
-          li: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
           li: a(href="http://joelpurra.github.com/emulatetab") EmulateTab
-          li: a(href="https://gist.github.com/joelpurra/3024198") Followup
-          li: a(href="https://gist.github.com/joelpurra/2254354") AutoCleanCallback
-          li: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
+          li: a(href="http://joelpurra.github.com/skipontab") SkipOnTab
+          li: a(href="http://joelpurra.github.com/plusastab") PlusAsTab
+          li: a(href="https://github.com/joelpurra/followup") Followup
+          li: a(href="https://github.com/joelpurra/autocleancallback") AutoCleanCallback
+          li: a(href="https://github.com/joelpurra/autocleancallback-canada") AutoCleanCallback-Canada
           li: a(href="https://github.com/joelpurra/pagehasformchanges") PageHasFormChanges
+          li: a(href="http://joelpurra.github.com/editdidwhat") EditDidWhat
           li: a(href="https://gist.github.com/joelpurra/2944926") ChangePolling
+          li: a(href="https://github.com/joelpurra/jquery-mutation-summary") jquery-mutation-summary
           li: a(href="https://github.com/joelpurra/formfieldinfo") FormFieldInfo
+          li: a(href="https://github.com/joelpurra/extract-fields") extract-fields
+          li: a(href="https://gist.github.com/joelpurra/2984763") ObjectComparator
 
       section(data-bespoke-hash="joelpurra")
         h2 Joel Purra
@@ -331,14 +347,6 @@ html
         p The rest of the presentation is licenced under 
           a(href="https://creativecommons.org/licenses/by-sa/3.0/") CC BY-SA 3.0
           .
-
-      //- section(data-bespoke-hash="")
-        h2 Header
-        h3.bullet Powered by <a href=""></a>
-        ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
 
     footer
       a(href="http://joelpurra.com") joelpurra.com
