@@ -1,4 +1,11 @@
-# Improving user experience in HTML forms
+# [Improving user experience in HTML forms](http://joelpurra.github.io/html-forms-presentation/) presentation slideshow
+
+[Read the slides online](http://joelpurra.github.io/html-forms-presentation/) or [have a look at other resources](http://joelpurra.github.io/html-forms/).
+
+
+
+## Presentation code
+
 > A [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) presentation, built with [generator-bespoke](https://github.com/markdalgleish/generator-bespoke)
 
 ## View slides locally
@@ -15,3 +22,15 @@ Then, install dependencies and run the preview server:
 $ npm install && bower install
 $ grunt server
 ```
+
+
+
+## License
+Copyright (c) 2013 [Joel Purra](http://joelpurra.com/)
+All rights reserved.
+
+Code snippets/examples may be copied freely, the rest is licenced under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/joelpurra/html-forms-presentation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
