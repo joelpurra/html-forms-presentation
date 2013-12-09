@@ -74,10 +74,21 @@ html
         h3 An HTML5 form validation plugin for jQuery.
         p Usability (normalize browser behavior, early feedback, error messages)
         hr
+        code.block.language-markup
+          pre.
+            <input type="text" required="required"
+              placeholder="A#A #A#"
+              pattern="^([a-zA-Z]\d[a-zA-Z])\s*(\d[a-zA-Z]\d)$"
+              title="Required: Canadian H0H 0H0 format."
+              data-h5-errorid="invalid-zip" />
+            <span id="invalid-zip">*</span>
+        hr
         code.block.language-javascript
           pre.
             $("form").h5Validate();
-        p Not super active, but my fork is one year old, and only partially re-integrated.
+        p Not super active, but my fork is one year old, and only 
+          a(href="http://ericleads.com/h5validate/") partially/badly re-integrated upstream
+          .
         aside
           p The original author uses the code in production, and didn't approve of my additions. I have them merged in my fork, but I think it might be best to use a different, or several separate libraries.
           p This was a good match for what I was looking for last year, but after having worked with it, I think there are more configurable and dynamic alternatives.
@@ -289,6 +300,12 @@ html
           a(href="https://gist.github.com/joelpurra/2984763") ObjectComparator
           .
         p The form field information is used to filter out potential form problems, like missing field names, values for radio buttons etcetera.
+
+      section(data-bespoke-hash="mentions")
+        h2 Unreleased projects
+        p Some examples
+        h3 AccessKeys: A tool that automatically displays all keyboard shortcuts available.
+        p When holding down the Alt key, shortcuts and their descriptions are displayed - both as a summary and beside the button/link that it activates. Increases usage, user shortcut key suggestions and satisfaction.
 
       //- section(data-bespoke-hash="", data-bespoke-state="emphatic")
         h2: a(href="") 
